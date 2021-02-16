@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<summary>
+  <header>Retail Store Application</header>
+
+    <article>RealStore.csproj</article>
+      <section>Environment and Build Parameters</section>
+        <details>SDK as Microsoft.NET 5.0</details>
+
+    <article>RetailStore.cs</article>
+
+    <article>RealStoreController.cs</article>
+    
+    <article>RealStoreView.cs</article>
+   
+</summary>
