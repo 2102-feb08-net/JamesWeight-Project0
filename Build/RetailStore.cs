@@ -8,18 +8,20 @@ namespace Application
     {       
         static void Main()
         {
-            InterfaceRoutines InstantiationView = new InterfaceRoutines();
-            ControllerRoutines InstantiationController = new ControllerRoutines();
+            InterfaceRoutines InstantiateView = new InterfaceRoutines();
+            ControllerRoutines InstantiateController = new ControllerRoutines();
 
-            InstantiationView.Display();
-            InstantiationController.TestDisplay();
+            InstantiateView.Display();
+            InstantiateController.TestDisplay();
         }
     }
 }
 
 // Revature:
 //  Batch - 2021F2102-feb08-net
-//   Project0 - Feb 12, 2021 Received Specifications
-//            - Feb 24, 2021 Requested Deliverable
+//
+//  Project0 - Feb 12, 2021 Received Specifications
+//           - Feb 24, 2021 Requested Deliverable
+//
 //  Project Lead - Nick Escalon
-//          Deliverable Author - James Weight
+//  Deliverable Author - James Weight
