@@ -1,0 +1,362 @@
+{
+  "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Resources/deployments/Microsoft.SQLDatabase.newDatabaseNewServer_6836f6b7d6c94185ae21e",
+  "name": "Microsoft.SQLDatabase.newDatabaseNewServer_6836f6b7d6c94185ae21e",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/databases/Chinook",
+    "marketplaceItemId": "Microsoft.SQLDatabase"
+  },
+  "properties": {
+    "templateHash": "11684772467073447296",
+    "parameters": {
+      "administratorLogin": {
+        "type": "String",
+        "value": "JWrevature"
+      },
+      "administratorLoginPassword": {
+        "type": "SecureString"
+      },
+      "collation": {
+        "type": "String",
+        "value": "SQL_Latin1_General_CP1_CI_AS"
+      },
+      "databaseName": {
+        "type": "String",
+        "value": "Chinook"
+      },
+      "tier": {
+        "type": "String",
+        "value": "Basic"
+      },
+      "skuName": {
+        "type": "String",
+        "value": "Basic"
+      },
+      "location": {
+        "type": "String",
+        "value": "westus2"
+      },
+      "maxSizeBytes": {
+        "type": "Int",
+        "value": 2147483648
+      },
+      "serverName": {
+        "type": "String",
+        "value": "2012-training-jamesweight-sql"
+      },
+      "sampleName": {
+        "type": "String",
+        "value": ""
+      },
+      "zoneRedundant": {
+        "type": "Bool",
+        "value": false
+      },
+      "licenseType": {
+        "type": "String",
+        "value": ""
+      },
+      "readScaleOut": {
+        "type": "String",
+        "value": "Disabled"
+      },
+      "numberOfReplicas": {
+        "type": "Int",
+        "value": 0
+      },
+      "minCapacity": {
+        "type": "String",
+        "value": ""
+      },
+      "autoPauseDelay": {
+        "type": "String",
+        "value": ""
+      },
+      "enableADS": {
+        "type": "Bool",
+        "value": false
+      },
+      "allowAzureIps": {
+        "type": "Bool",
+        "value": false
+      },
+      "databaseTags": {
+        "type": "Object",
+        "value": {}
+      },
+      "serverTags": {
+        "type": "Object",
+        "value": {}
+      },
+      "enableVA": {
+        "type": "Bool",
+        "value": false
+      },
+      "useVAManagedIdentity": {
+        "type": "Bool",
+        "value": false
+      },
+      "enablePrivateEndpoint": {
+        "type": "Bool",
+        "value": false
+      },
+      "privateEndpointNestedTemplateId": {
+        "type": "String",
+        "value": "pe-2f0563af-e1de-43b6-9327-19cc1332e010"
+      },
+      "privateEndpointSubscriptionId": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointResourceGroup": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointName": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointLocation": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointSubnetId": {
+        "type": "String",
+        "value": ""
+      },
+      "privateLinkServiceName": {
+        "type": "String",
+        "value": ""
+      },
+      "privateLinkServiceServiceId": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointVnetSubscriptionId": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointVnetResourceGroup": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointVnetName": {
+        "type": "String",
+        "value": ""
+      },
+      "privateEndpointSubnetName": {
+        "type": "String",
+        "value": ""
+      },
+      "enablePrivateDnsZone": {
+        "type": "Bool",
+        "value": true
+      },
+      "privateLinkPrivateDnsZoneFQDN": {
+        "type": "String",
+        "value": "privatelink.database.windows.net"
+      },
+      "privateEndpointDnsRecordUniqueId": {
+        "type": "String",
+        "value": "2f0563af-e1de-43b6-9327-19cc1332e013"
+      },
+      "privateEndpointTemplateLink": {
+        "type": "String",
+        "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.01503113/DeploymentTemplates/PrivateEndpoint.json"
+      },
+      "privateDnsForPrivateEndpointTemplateLink": {
+        "type": "String",
+        "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.01503113/DeploymentTemplates/PrivateDnsForPrivateEndpoint.json"
+      },
+      "privateDnsForPrivateEndpointNicTemplateLink": {
+        "type": "String",
+        "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.01503113/DeploymentTemplates/PrivateDnsForPrivateEndpointNic.json"
+      },
+      "privateDnsForPrivateEndpointIpConfigTemplateLink": {
+        "type": "String",
+        "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.01503113/DeploymentTemplates/PrivateDnsForPrivateEndpointIpConfig.json"
+      },
+      "allowClientIp": {
+        "type": "Bool",
+        "value": false
+      },
+      "clientIpRuleName": {
+        "type": "String",
+        "value": "ClientIp-2021-2-17_9-8-33"
+      },
+      "clientIpValue": {
+        "type": "String",
+        "value": "73.220.86.100"
+      },
+      "storageAccountType": {
+        "type": "String",
+        "value": ""
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2021-02-17T17:10:16.9752608Z",
+    "duration": "PT1M40.0385904S",
+    "correlationId": "88a20bae-1f8a-4b55-b5e3-3db3d8be26c3",
+    "providers": [
+      {
+        "namespace": "Microsoft.Sql",
+        "resourceTypes": [
+          {
+            "resourceType": "servers",
+            "locations": [
+              "westus2"
+            ]
+          },
+          {
+            "resourceType": "servers/databases",
+            "locations": [
+              "westus2"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Storage/storageAccounts/sqlvaroduykvu3jtyu",
+            "resourceType": "Microsoft.Storage/storageAccounts",
+            "resourceName": "sqlvaroduykvu3jtyu"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql",
+            "apiVersion": "2018-06-01-preview"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Storage/storageAccounts/sqlvaroduykvu3jtyu/providers/Microsoft.Authorization/roleAssignments/c1089d9b-0a6e-5693-b0cc-4b6d73f1afad",
+        "resourceType": "Microsoft.Storage/storageAccounts/providers/roleAssignments",
+        "resourceName": "sqlvaroduykvu3jtyu/Microsoft.Authorization/c1089d9b-0a6e-5693-b0cc-4b6d73f1afad"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/databases/Chinook",
+        "resourceType": "Microsoft.Sql/servers/databases",
+        "resourceName": "2012-training-jamesweight-sql/Chinook"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/firewallrules/AllowAllWindowsAzureIps",
+        "resourceType": "Microsoft.Sql/servers/firewallrules",
+        "resourceName": "2012-training-jamesweight-sql/AllowAllWindowsAzureIps"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/firewallrules/ClientIp-2021-2-17_9-8-33",
+        "resourceType": "Microsoft.Sql/servers/firewallrules",
+        "resourceName": "2012-training-jamesweight-sql/ClientIp-2021-2-17_9-8-33"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/databases/Chinook",
+            "resourceType": "Microsoft.Sql/servers/databases",
+            "resourceName": "2012-training-jamesweight-sql/Chinook"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/securityAlertPolicies/Default",
+        "resourceType": "Microsoft.Sql/servers/securityAlertPolicies",
+        "resourceName": "2012-training-jamesweight-sql/Default"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql",
+            "resourceType": "Microsoft.Sql/servers",
+            "resourceName": "2012-training-jamesweight-sql"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Storage/storageAccounts/sqlvaroduykvu3jtyu",
+            "resourceType": "Microsoft.Storage/storageAccounts",
+            "resourceName": "sqlvaroduykvu3jtyu"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/securityAlertPolicies/Default",
+            "resourceType": "Microsoft.Sql/servers/securityAlertPolicies",
+            "resourceName": "2012-training-jamesweight-sql/Default"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/vulnerabilityAssessments/Default",
+        "resourceType": "Microsoft.Sql/servers/vulnerabilityAssessments",
+        "resourceName": "2012-training-jamesweight-sql/Default"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/databases/Chinook",
+            "resourceType": "Microsoft.Sql/servers/databases",
+            "resourceName": "2012-training-jamesweight-sql/Chinook"
+          },
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Resources/deployments/SubnetPolicies-",
+            "resourceType": "Microsoft.Resources/deployments",
+            "resourceName": "SubnetPolicies-"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Resources/deployments/PrivateEndpoint-",
+        "resourceType": "Microsoft.Resources/deployments",
+        "resourceName": "PrivateEndpoint-"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Resources/deployments/PrivateEndpoint-",
+            "resourceType": "Microsoft.Resources/deployments",
+            "resourceName": "PrivateEndpoint-"
+          }
+        ],
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Resources/deployments/PrivateDns-pe-2f0563af-e1de-43b6-9327-19cc1332e010",
+        "resourceType": "Microsoft.Resources/deployments",
+        "resourceName": "PrivateDns-pe-2f0563af-e1de-43b6-9327-19cc1332e010"
+      }
+    ],
+    "outputResources": [
+      {
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql"
+      },
+      {
+        "id": "/subscriptions/23cc00fb-0231-4638-add3-b255c81e5e29/resourceGroups/JamesWeight/providers/Microsoft.Sql/servers/2012-training-jamesweight-sql/databases/Chinook"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}

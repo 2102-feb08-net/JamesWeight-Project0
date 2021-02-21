@@ -1,0 +1,22 @@
+UT:
+ UTroutines
+ .UTdisplay();
+
+MSext:
+ MSlogEXTroutines
+ .MSlogEXTdisplay();
+
+MSextFWentity:
+ MSextFWentityRoutines
+ .MSextFWentityDisplay();
+
+HUM:
+ HUMroutines
+ .HUMdisplay();
+SD:
+ SDroutines
+ .SDdisplay();
+DB:
+ DBroutines
+ .DBdisplay();
+

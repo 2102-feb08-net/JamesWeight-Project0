@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include = "../DataRepository/ChinookDBmodelSQL.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include = "../DataSerialization/ControllerSerialization.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include = "../HumanizerExtensions/ExtensionsHUM.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include = "../MicrosoftEntityFrameWork/Data-baseController.csproj"/>
+  </ItemGroup> 
+  <ItemGroup>
+    <ProjectReference Include = "../MicrosoftLogging-TroubleShootingDebuggingExtensions/Logging.csproj"/>
+  </ItemGroup> 
+  <ItemGroup>
+    <ProjectReference Include = "../NetFramework-xUnit/UnitTesting.csproj"/>
+  </ItemGroup> 
+
+</Project>

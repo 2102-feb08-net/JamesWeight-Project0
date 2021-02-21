@@ -3,9 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <ProjectReference include = "../UnitTesting.NET/xUnitNET.csproj"/>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly> 
-    </ProjectReference>
   </PropertyGroup>
 
 </Project>
