@@ -5,7 +5,7 @@ namespace HUM
     // Added a Unit Test
     public class HUMroutines
     {   
-       // Structural Integrity Test
+        // Structural Integrity Test
         public void Display()
         {
             Console.WriteLine("TDD-StructuralIntegrity-HUM");

@@ -4,6 +4,7 @@ namespace View
 {
     public class ViewRoutines
     {
+        // Structural Integrity Test
         public void Display()
         {
             Console.WriteLine("TDD-StructuralIntegrityView");

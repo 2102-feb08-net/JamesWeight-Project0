@@ -18,7 +18,12 @@ namespace Application
         //              InstantiateView.Display();
         static void Main()
         {
-           //Unit Testing
+           // Unit Testing - Structural Integrity
+           bool UTresult = StructuralIntegrityUTintegration();
+           Console.WriteLine(UTresult);
+        }
+        // Structural Integrity Test Complete as Solid
+        static bool StructuralIntegrityUTintegration(){
            ViewRoutines _instantiateViewUT1 = new ViewRoutines(); _instantiateViewUT1.Display();
            ControllerRoutines _instantiateViewUT2 = new ControllerRoutines(); _instantiateViewUT2.Display();
            DBroutines _instantiateViewUT3 = new DBroutines(); _instantiateViewUT3.Display();
@@ -27,6 +32,8 @@ namespace Application
            ExtensionFWentityMSroutines _instantiateViewUT6 = new ExtensionFWentityMSroutines(); _instantiateViewUT6.Display();
            ExtensionMSroutines _instantiateViewUT7 = new ExtensionMSroutines(); _instantiateViewUT7.Display();
            UTroutines _instantiateViewUT8 = new UTroutines(); _instantiateViewUT8.Display();
+           
+           return true;
         }
     }
 }
