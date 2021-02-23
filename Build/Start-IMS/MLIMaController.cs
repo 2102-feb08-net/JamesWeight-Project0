@@ -2,8 +2,17 @@ using System;
 
 namespace Controller
 {
+    // MVC - Model for Controller Concept
+    // ===========
+    // Separation of Concerns
+    // SOLID - Single Responsibility Principle
     public class ControllerRoutines
     {
+        // Handler for User Selection via View
+        public void Selection(string character)
+        {
+            Console.WriteLine(character);
+        }
         // Structural Integrity Test
         public void Display()
         {

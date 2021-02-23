@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<summary>
+  <header>Market Locations Inventory Management Application (MLiMa)
+          Frame-works Package Edition {2021} (February 21)</header>
+
+    <article>public interface Store
+        int ID{ get; set; } // PK, Unique
+        int ZipCode{ get; set; }</article>
+
+    <article>public interface Customer
+        int ID{ get; set; } // PK, Unique
+        string FirstName{ get; set; }
+        string LastName{ get; set; }
+        string Address{ get; set; }
+        string AddressAdditional{ get; set; }</article>
+
+    <article>public interface Customer
+        int ID{ get; set; } // PK, Unique
+        string FirstName{ get; set; }
+        string LastName{ get; set; }
+        string Address{ get; set; }
+        string AddressAdditional{ get; set; }</article>
+
+    <article>public interface Location
+        int ID{ get; set; } // PK, Unique as ZipCode
+        string City{ get; set; }
+        string State{ get; set; }</article>
+
+    <article>public interface Product
+        int ID{ get; set; }
+        string Description{ get; set; }
+        float Price{ get; set; }</article>
+
+    <article>public class DBroutines // Required to Allow Usage
+        public void Display() // Required to Allow Usage</article>
+
+    <article>public class ControllerRoutines // Required to Allow Usage
+        public void Selection(string character) // Required to Allow Usage
+        public void Display() // Required to Allow Usage</article>
+
+    <article>public class ViewRoutines
+        private string _data = "Welcome to the MLiMa Order Center"; // Internal Usage of Storing a Title
+        public void MenuInterface() // Required to Allow Usage
+        string UserSelection = Console.ReadLine(); // Allow User to Choose
+        public void Display() // Required to Allow Usage</article>
+    
+    <article>public class ApplicationProgrammingInterface // Required to Allow Usage
+        static void Main() // Required to Run
+        static bool StructuralIntegrityUTintegration() // Unit Testing Group</article>
+        
+</summary>
