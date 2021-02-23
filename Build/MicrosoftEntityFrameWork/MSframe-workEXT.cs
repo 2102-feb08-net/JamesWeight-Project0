@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace ExtensionFWentityMS
+namespace EntityFWextensions
 {
     // Added a Unit Test
-    public class ExtensionFWentityMSroutines
+    public class EntityRoutines
     {   
         // Structural Integrity Test
         public void Display()
         {
-            Console.WriteLine("TDD-StructuralIntegrity-ExtensionFWentityMS");
+            Console.WriteLine("TDD-StructuralIntegrity-EntityRoutines");
         }
          // Required
         static void Main(){ }

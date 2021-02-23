@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include = "../DataRepository/ChinookDBmodelSQL.csproj"/>
+    <ProjectReference Include = "../DataRepository/DataLogicSQL.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include = "../DataSerialization/ControllerSerialization.csproj"/>
@@ -15,8 +15,8 @@
     <ProjectReference Include = "../HumanizerExtensions/ExtensionsHUM.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include = "../MicrosoftEntityFrameWork/Data-baseController.csproj"/>
-  </ItemGroup> 
+    <ProjectReference Include = "../MicrosoftEntityFrameWork/EntityExtensions.csproj"/>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include = "../MicrosoftLogging-TroubleShootingDebuggingExtensions/Logging.csproj"/>
   </ItemGroup> 

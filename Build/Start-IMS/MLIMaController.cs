@@ -9,9 +9,10 @@ namespace Controller
     public class ControllerRoutines
     {
         // Handler for User Selection via View
-        public void Selection(string character)
+        public void Selection(string Character)
         {
-            Console.WriteLine(character);
+            // Business Logic Test of User Decision
+            //   Console.WriteLine(">> " + Character + " <<");
         }
         // Structural Integrity Test
         public void Display()

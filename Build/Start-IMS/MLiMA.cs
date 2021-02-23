@@ -4,7 +4,7 @@ using Controller;
 using DB;
 using SD;
 using HUM;
-using ExtensionFWentityMS;
+using EntityFWextensions;
 using ExtensionMS;
 using UT;
 
@@ -23,8 +23,9 @@ namespace Development
         //  InstantiateView.Display();
         static void Main()
         {
+            int MenuLogic = 0;
             ViewRoutines _instantiateView = new ViewRoutines();
-            _instantiateView.MenuInterface();
+            _instantiateView.MenuInterface(MenuLogic);
 
             // Unit Testing - Structural Integrity
             //   bool UTresult = StructuralIntegrityUTintegration(); Console.WriteLine(UTresult);
@@ -46,8 +47,8 @@ namespace Development
            HUMroutines _instantiateViewUT5 =
             new HUMroutines();
            _instantiateViewUT5.Display();
-           ExtensionFWentityMSroutines _instantiateViewUT6 =
-            new ExtensionFWentityMSroutines();
+           EntityRoutines _instantiateViewUT6 =
+            new EntityRoutines();
            _instantiateViewUT6.Display();
            ExtensionMSroutines _instantiateViewUT7 =
             new ExtensionMSroutines();
