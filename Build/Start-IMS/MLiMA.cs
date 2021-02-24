@@ -11,7 +11,7 @@ using UT;
 namespace Development
 {
     // API
-    public class ApplicationProgrammingInterface
+    public class ApplicationalProgram
     {   
         // Main Routine to call Methods from other Classes in The Namespace Nomenclature
         // ===========
@@ -23,15 +23,16 @@ namespace Development
         //  InstantiateView.Display();
         static void Main()
         {
-            int MenuLogic = 0;
+            // Main Menu Screen Output
             ViewRoutines _instantiateView = new ViewRoutines();
-            _instantiateView.MenuInterface(MenuLogic);
+            _instantiateView.MenuInterface(0);
 
             // Unit Testing - Structural Integrity
             //   bool UTresult = StructuralIntegrityUTintegration(); Console.WriteLine(UTresult);
         }
         // Structural Integrity Test Complete as Solid
         static bool StructuralIntegrityUTintegration(){
+           // Instantiations
            ViewRoutines _instantiateViewUT1 =
             new ViewRoutines();
            _instantiateViewUT1.Display();

@@ -1,4 +1,6 @@
 using System;
+using DB;
+using View;
 
 namespace Controller
 {
@@ -8,11 +10,57 @@ namespace Controller
     // SOLID - Single Responsibility Principle
     public class ControllerRoutines
     {
+        // Data utilized by Methods
+        private string _data = String.Empty;
         // Handler for User Selection via View
-        public void Selection(string Character)
+        public void Selection(int Character)
         {
-            // Business Logic Test of User Decision
-            //   Console.WriteLine(">> " + Character + " <<");
+            // Retrieve Data for Utilization
+               DBroutines _instantiateData = new DBroutines();
+                string _data = _instantiateData.ReadData(Character);
+            // Switch - Case Selection
+            switch(Character)
+            {
+                case 49:
+                    // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 50:
+                    // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 51:
+                   // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 52:
+                    // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 53:
+                    // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 54:
+                    // Console.WriteLine(Character); // Unit Test
+                    break;
+                case 48:
+                    // Messaging Declaration to Close Applicational Program
+                    Console.WriteLine("Shutting Down Program and Closing Application...");
+                    System.Environment.Exit(0);
+                    break;
+                case 65:
+                    // Console.WriteLine("Being Developed"); // Unit Test
+                    break;
+                case 66:
+                    // Console.WriteLine("Being Developed"); // Unit Test
+                    break;
+                case 67:
+                    // Console.WriteLine("Being Developed"); // Unit Test
+                    break;
+                default:
+                    // Exception Handling
+                    Console.WriteLine("Exception...");
+                break;
+            }
+            // Transfer 
+            ViewRoutines _instantiateView = new ViewRoutines();
+            _instantiateView.MenuInterface(0);
         }
         // Structural Integrity Test
         public void Display()
