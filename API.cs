@@ -12,7 +12,7 @@ namespace Application
             
    //SqlConnection test;
    //string connectionString = "";
-   //cnn = new SqlConnection(connectionString);
+   string test = new SqlConnection("LocalHost");
    //cnn.Open();
    //Console.WriteLine("Connection Open  !");
    //cnn.Close();
