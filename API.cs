@@ -1,7 +1,7 @@
 ﻿using System;
 using OrderLibrary;
 using ProductLibrary;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 
 namespace Application
 {
@@ -12,7 +12,7 @@ namespace Application
             
    //SqlConnection test;
    //string connectionString = "";
-   string test = new SqlConnection("LocalHost");
+   // string test = new System.SqlConnection("LocalHost");
    //cnn.Open();
    //Console.WriteLine("Connection Open  !");
    //cnn.Close();
