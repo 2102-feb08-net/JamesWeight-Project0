@@ -1,17 +1,27 @@
 ﻿using System;
-using DomainLibraryA;
-using DomainLibraryB;
+using OrderLibrary;
+using ProductLibrary;
 
 namespace Application
 {
-    internal class Program
+    internal class Start
     {
-        internal static void Main()
+        static void Main()
         {
-            var ctx = new SContext();
-            var student = new Student() { StudentName = "Bill" };
+            /*
+   string connectionString;
+   SqlConnection cnn;
+   connectionString = "localhost";
+   cnn = new SqlConnection(connectionString);
+   cnn.Open();
+   Console.WriteLine("Connection Open  !");
+   cnn.Close();*/
 
-            Console.WriteLine(student.StudentName + (char)13 + (char)10 + ctx.Height);
-        }
+            OrderLibrary.Routines _instantiateView1 = new OrderLibrary.Routines();
+            _instantiateView1.Interface();
+            LocationLibrary.Routines _instantiateView2 = new LocationLibrary.Routines();
+            _instantiateView2.Interface();
+            ProductLibrary.Routines _instantiateView3 = new ProductLibrary.Routines();
+            _instantiateView3.Interface();        }
     }
 }

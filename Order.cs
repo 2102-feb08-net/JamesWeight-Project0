@@ -1,15 +1,15 @@
 using System;
-using System.Collections.Generic;
 
-namespace Library.DomainOrders
+namespace OrderLibrary
 {
-    public class Order
+    internal class Routines
     {
-        public int S { get; set; }
-        public string StudentName { get; set; }
-        public DateTime? DateOfBirth { get; set; }
-        public decimal Height { get; set; }
-        public float Weight { get; set; }
-        public byte[] RowVersion { get; set; }
+        private int ID { get; set; }  // Primary Key
+        private int CustomerID { get; set; } // Foreign Key
+        private int StoreID { get; set; } // Foreign Key
+
+        internal void Interface(){
+            Console.WriteLine("Order.");
+        }
     }
 }
