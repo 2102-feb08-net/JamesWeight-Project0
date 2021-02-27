@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace DomainLibraryA
+namespace Library.DomainOrders
 {
-    public class Student
+    public class Order
     {
-        public int StudentID { get; set; }
+        public int S { get; set; }
         public string StudentName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public decimal Height { get; set; }
