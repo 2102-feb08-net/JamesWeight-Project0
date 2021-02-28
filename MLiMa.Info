@@ -1,1 +1,1 @@
-Server=localhost,Authentication=Windows Authentication, Database=MLiMa
+Server=localhost; Database=MLiMa;Integrated Security=SSPI;
