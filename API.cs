@@ -94,7 +94,7 @@ namespace Application
         // System.Data.SQLclient
         static void SQLquery(string Query){
             // Inform
-            Console.WriteLine("Processing Query for Customers");
+            Console.WriteLine("Processing Query for Customers" + (char)13 + (char)10);
             // Connection Information
             string Pointer = File.ReadAllText("./MLiMa.Info");
             //
@@ -121,7 +121,12 @@ Console.WriteLine(String.Format("{0}", ReadData[0]));
             catch
             {
                 // Inform
-                Console.WriteLine("Menu Option?");
+                Console.WriteLine("No Records Found..." + (char)13 + (char)10);
+            }
+            finally
+            {
+                // Inform
+                Console.WriteLine("Menu Option?" + (char)13 + (char)10);
             }
         }
     }
