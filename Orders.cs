@@ -2,14 +2,27 @@ using System;
 
 namespace OrderLibrary
 {
-    internal class Routines
+    interface IInterface
+    {
+        void InterfaceBusinessLogic();
+    }
+
+    internal class Routines : IInterface
     {
         private int ID { get; set; }  // Primary Key
+
         private int CustomerID { get; set; } // Foreign Key
         private int StoreID { get; set; } // Foreign Key
+        private int ProductID { get; set; } // Foreign Key
 
-        internal void Interface(){
-            Console.WriteLine("Orders.");
+        private int DealsPercentageReduction { get; set; } // Special Deal
+        private int DealsAmountReduction { get; set; } // Special Deal
+
+        private string Record { get; set; } // Date Time Offset UTC
+
+
+        public void InterfaceBusinessLogic(){
+           // Console.WriteLine("Orders."); // SI - TDD
         }
     }
 }

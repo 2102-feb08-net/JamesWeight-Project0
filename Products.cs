@@ -2,12 +2,25 @@ using System;
 
 namespace ProductLibrary
 {
-    internal class Routines
+    interface IInterface
+    {
+        void InterfaceBusinessLogic();
+    }
+
+    internal class Routines : IInterface
     {
         private int ID { get; set; }  // Primary Key
 
-        internal void Interface(){
-            Console.WriteLine("Products.");
+        private int LocationID { get; set; }  // Zipcode of Store
+        private int Price { get; set; }  // In U.S. Dollars
+        private int Quantity { get; set; }  // In Stock at LocationID
+
+        private string Name { get; set; }    // VarChar(100)
+        private string Description { get; set; } // VarChar(300)
+
+
+        public void InterfaceBusinessLogic(){
+            // Console.WriteLine("Products."); // SI - TDD
         }
     }
 }

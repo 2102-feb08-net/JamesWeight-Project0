@@ -2,12 +2,23 @@ using System;
 
 namespace LocationLibrary
 {
-    internal class Routines
+    interface IInterface
     {
-        private int ID { get; set; }  // Primary Key
+        void InterfaceBusinessLogic();
+    }
 
-        internal void Interface(){
-            Console.WriteLine("Locations.");
+    internal class Routines : IInterface
+    {
+        private int ID { get; set; }         // Primary Key
+
+        private long Phone { get; set; }     // 12 Digit Internation Code
+
+        private string Name { get; set; }    // VarChar(100)
+        private string Address { get; set; } // VarChar(300)
+        private string eMail { get; set; }   // VarChar(100)
+
+        public void InterfaceBusinessLogic(){
+            // Console.WriteLine("Locations."); // SI - TDD
         }
     }
 }
