@@ -15,23 +15,16 @@ namespace Application
     {
         static void Main()
         {   
-            // Connection Information
-            string Pointer = File.ReadAllText("./MLiMa.Info");
-            //
-            // Console.WriteLine(Pointer); // Test
-            //
-            // Register to End Program & Close Connections
+            // Register to End Program
             bool Complete = false;
-            // Establish DB
-            SqlConnection DBconnect = new SqlConnection(Pointer);
-            // Open ResourceDB
-            DBconnect.Open();
             // Title
             Console.WriteLine(" " + (char)13 + (char)10 + " ");
             string _data = "Welcome to the Market Locations Inventory Management Application";
             Console.WriteLine(_data + (char)13 + (char)10);
             // Display Menu
             DisplayMenu(_data);
+            // Toggle Mode
+            bool LinqEntityMode = false;
             // Main Iteration of User Interface
             do
             {
@@ -39,11 +32,21 @@ namespace Application
                 int Key = Console.Read();
                 // Flow-Chart Pointers
                 if (Key == 48) Complete = true;
+                // ----------
+                if (Key == 55){ LinqEntityMode = true; Console.WriteLine("Linq Entity Frame-work Mode"); }
+                if (Key == 56){ LinqEntityMode = false; Console.WriteLine("System.Data.SQLclient Mode"); }
                 if (Key == 57) DisplayMenu(_data);
+                // ----------
+                if (Key == 85 || Key == 165){
+                    if (LinqEntityMode){
+
+                    }else{
+                        SQLquery("SELECT * FROM Customers");
+                    }
+                }
             }
             while (!Complete);
-            // Close ResourceDB
-            DBconnect.Close();
+
             // Structural Integrity Test
             /*
             CustomerLibrary.Routines _instantiateView1 = new CustomerLibrary.Routines();
@@ -76,10 +79,40 @@ namespace Application
                 + new String('=', Data.Length) + (char)13 + (char)10
                 + "A) Serialize Data" + (char)13 + (char)10
                 + "B) DeSerialize Data" + (char)13 + (char)10
-                + new String('-', Data.Length) + (char)13 + (char)10
-                + "0) Exit" + (char)13 + (char)10
-                + "9) Redisplay Menu" + (char)13 + (char)10
+                + "U) View Table Customers" + (char)13 + (char)10 // 85, 165
+                + "I) View Table Locations" + (char)13 + (char)10
+                + "O) View Table Products" + (char)13 + (char)10
+                + "P) View Table Orders" + (char)13 + (char)10
+                + new String('-', Data.Length) + (char)13 + (char)10 //
+                + "0) Exit" + (char)13 + (char)10 // 48
+                + new String('-', Data.Length) + (char)13 + (char)10 //
+                + "7) Linq Entity Frame-work Mode" + (char)13 + (char)10 // 55
+                + "8) System.Data.SQLclient Mode" + (char)13 + (char)10 // 56
+                + "9) Redisplay Menu" + (char)13 + (char)10 // 57
             );
+        }
+        // System.Data.SQLclient
+        static void SQLquery(string Query){
+            // Connection Information
+            string Pointer = File.ReadAllText("./MLiMa.Info");
+            //
+            // Console.WriteLine(Pointer); // Test
+            //
+            // Establish DB
+            SqlConnection DBconnect = new SqlConnection(Pointer);
+            // Open ResourceDB
+            DBconnect.Open();
+            // Send Instruction
+            SqlCommand DBinstruction = new SqlCommand(Query, DBconnect);
+            // Read Instruction
+            SqlDataReader ReadData = DBinstruction.ExecuteReader();
+            // Display Instruction
+            while (ReadData.Read())
+            {
+Console.WriteLine(ReadData.GetValue(0) + " - " + ReadData.GetValue(1) + " - " + ReadData.GetValue(2));
+            }
+            // Close ResourceDB
+            DBconnect.Close();
         }
     }
 }
