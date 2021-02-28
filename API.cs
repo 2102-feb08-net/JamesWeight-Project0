@@ -37,7 +37,7 @@ namespace Application
                 if (Key == 56){ LinqEntityMode = false; Console.WriteLine("System.Data.SQLclient Mode"); }
                 if (Key == 57) DisplayMenu(_data);
                 // ----------
-                if (Key == 85 || Key == 165){
+                if (Key == 85 || Key == 117){
                     if (LinqEntityMode){
 
                     }else{
@@ -79,7 +79,7 @@ namespace Application
                 + new String('=', Data.Length) + (char)13 + (char)10
                 + "A) Serialize Data" + (char)13 + (char)10
                 + "B) DeSerialize Data" + (char)13 + (char)10
-                + "U) View Table Customers" + (char)13 + (char)10 // 85, 165
+                + "U) View Table Customers" + (char)13 + (char)10 // 85, 117
                 + "I) View Table Locations" + (char)13 + (char)10
                 + "O) View Table Products" + (char)13 + (char)10
                 + "P) View Table Orders" + (char)13 + (char)10
@@ -93,26 +93,36 @@ namespace Application
         }
         // System.Data.SQLclient
         static void SQLquery(string Query){
+            // Inform
+            Console.WriteLine("Processing Query for Customers");
             // Connection Information
             string Pointer = File.ReadAllText("./MLiMa.Info");
             //
             // Console.WriteLine(Pointer); // Test
             //
             // Establish DB
-            SqlConnection DBconnect = new SqlConnection(Pointer);
-            // Open ResourceDB
-            DBconnect.Open();
-            // Send Instruction
-            SqlCommand DBinstruction = new SqlCommand(Query, DBconnect);
-            // Read Instruction
-            SqlDataReader ReadData = DBinstruction.ExecuteReader();
-            // Display Instruction
-            while (ReadData.Read())
+            try
             {
-Console.WriteLine(ReadData.GetValue(0) + " - " + ReadData.GetValue(1) + " - " + ReadData.GetValue(2));
+                SqlConnection DBconnect = new SqlConnection(Pointer);
+                // Open ResourceDB
+                DBconnect.Open();
+                // Send Instruction
+                SqlCommand DBinstruction = new SqlCommand(Query, DBconnect);
+                // Read Instruction
+                SqlDataReader ReadData = DBinstruction.ExecuteReader();
+                // Display Instruction
+                while (ReadData.Read())
+                {
+Console.WriteLine(String.Format("{0}", ReadData[0]));
+                }
+                // Close ResourceDB
+                DBconnect.Close();
             }
-            // Close ResourceDB
-            DBconnect.Close();
+            catch
+            {
+                // Inform
+                Console.WriteLine("Menu Option?");
+            }
         }
     }
 }
