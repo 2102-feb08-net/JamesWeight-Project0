@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Application
 {
@@ -7,7 +6,7 @@ namespace Application
     {
         static void Main()
         {   
-            // Business Logic from Class Libraries
+            // SI - TDD
             CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.BusinessLogic(false);
             ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.BusinessLogic(false);
             LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.BusinessLogic(false);
@@ -126,4 +125,3 @@ namespace Application
 //  Project Lead - Revature Corporate Trainor Nick Escalona
 //  Project Deliverable - Developer & Author -
 //                        Revature Engineering Associate James Weight
-

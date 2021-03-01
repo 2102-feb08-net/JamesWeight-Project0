@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-
 using System.Data.SqlClient;
 
 namespace DBlayer
@@ -38,30 +37,34 @@ namespace DBlayer
                             {
                                 Console.WriteLine(_key[_index] + ": " + _readData[_index]);
                             }
-                            // Store Last Record Entry as Current
+                            // Store SQLdata
+                             FileIOlayer.Routines _logicIO = new FileIOlayer.Routines();
+                             // Serialize Data for Transport
+                             bool _choice = _logicIO.Serialization(_readData);
+                            // Business Logic
                             if (_dataSet == 0)
                             {
                                 // Instantiation
                                 CustomerLibrary.Routines _instanceLR = new CustomerLibrary.Routines();
-                                _instanceLR.BusinessLogic(true);
+                                _instanceLR.BusinessLogic(_choice);
                             }
                             if (_dataSet == 1)
                             {
                                 // Instantiation
                                 LocationLibrary.Routines _instanceLR = new LocationLibrary.Routines();
-                                _instanceLR.BusinessLogic(true);
+                                _instanceLR.BusinessLogic(_choice);
                             }
                             if (_dataSet == 2)
                             {
                                 // Instantiation
                                 ProductLibrary.Routines _instanceLR = new ProductLibrary.Routines();
-                                _instanceLR.BusinessLogic(true);
+                                _instanceLR.BusinessLogic(_choice);
                             }
                             if (_dataSet == 3)
                             {
                                 // Instantiation
                                 OrderLibrary.Routines _instanceLR = new OrderLibrary.Routines();
-                                _instanceLR.BusinessLogic(true);
+                                _instanceLR.BusinessLogic(_choice);
                             }
                             // New Line
                             Console.WriteLine();
@@ -106,4 +109,3 @@ namespace DBlayer
 //  Project Lead - Revature Corporate Trainor Nick Escalona
 //  Project Deliverable - Developer & Author -
 //                        Revature Engineering Associate James Weight
-
