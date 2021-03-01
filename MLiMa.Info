@@ -1,1 +1,1 @@
-Server=localhost; Database=MLiMa;Integrated Security=SSPI;
+Server=localhost; Database=master;Integrated Security=SSPI;
