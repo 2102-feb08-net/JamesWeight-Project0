@@ -1,25 +1,24 @@
-using System;
+/* using System;
 
 namespace ProductLibrary
 {
     interface IInterface
     {
-        void InterfaceBusinessLogic();
+        void InterfaceBusinessLogic(int[] ID, int[] LocationID, int[] Price, int[] Quantity, string[] Name, string[] Description);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }  // Primary Key
+        private int[] ID { get; set; }  // Primary Key
 
-        private int LocationID { get; set; }  // Zipcode of Store
-        private int Price { get; set; }  // In U.S. Dollars
-        private int Quantity { get; set; }  // In Stock at LocationID
+        private int[] LocationID { get; set; }  // Zipcode of Store
+        private int[] Price { get; set; }  // In U.S. Dollars
+        private int[] Quantity { get; set; }  // In Stock at LocationID
 
-        private string Name { get; set; }    // VarChar(100)
-        private string Description { get; set; } // VarChar(300)
+        private string[] Name { get; set; }    // VarChar(100)
+        private string[] Description { get; set; } // VarChar(300)
 
-
-        public void InterfaceBusinessLogic(){
+        public void InterfaceBusinessLogic(int[] ID, int[] LocationID, int[] Price, int[] Quantity, string[] Name, string[] Description){
             // Console.WriteLine("Products."); // SI - TDD
         }
     }
@@ -35,4 +34,4 @@ namespace ProductLibrary
 //
 //  Project Lead - Revature Corporate Trainor Nick Escalona
 //  Project Deliverable - Developer & Author -
-//                        Revature Engineering Associate James Weight
+//                        Revature Engineering Associate James Weight */

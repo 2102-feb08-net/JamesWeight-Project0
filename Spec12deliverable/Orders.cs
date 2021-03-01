@@ -1,27 +1,26 @@
-using System;
+/* using System;
 
 namespace OrderLibrary
 {
     interface IInterface
     {
-        void InterfaceBusinessLogic();
+        void InterfaceBusinessLogic(int[] ID, int[] CustomerID, int[] StoreID, int[] ProductID, int[] DealsPercentageReduction, int[] DealsAmountReduction);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }  // Primary Key
+        private int[] ID { get; set; }  // Primary Key
 
-        private int CustomerID { get; set; } // Foreign Key
-        private int StoreID { get; set; } // Foreign Key
-        private int ProductID { get; set; } // Foreign Key
+        private int[] CustomerID { get; set; } // Foreign Key
+        private int[] StoreID { get; set; } // Foreign Key
+        private int[] ProductID { get; set; } // Foreign Key
 
-        private int DealsPercentageReduction { get; set; } // Special Deal
-        private int DealsAmountReduction { get; set; } // Special Deal
+        private int[] DealsPercentageReduction { get; set; } // Special Deal
+        private int[] DealsAmountReduction { get; set; } // Special Deal
 
-        private string Record { get; set; } // Date Time Offset UTC
+        private string[] Record { get; set; } // Date Time Offset UTC
 
-
-        public void InterfaceBusinessLogic(){
+        public void InterfaceBusinessLogic(int[] ID, int[] CustomerID, int[] StoreID, int[] ProductID, int[] DealsPercentageReduction, int[] DealsAmountReduction){
            // Console.WriteLine("Orders."); // SI - TDD
         }
     }
@@ -37,4 +36,4 @@ namespace OrderLibrary
 //
 //  Project Lead - Revature Corporate Trainor Nick Escalona
 //  Project Deliverable - Developer & Author -
-//                        Revature Engineering Associate James Weight
+//                        Revature Engineering Associate James Weight */

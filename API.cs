@@ -15,11 +15,15 @@ namespace Application
     {
         static void Main()
         {   
+            // PlaceHolder Registers
+            int[] _placeHolderINT = {-1};
+            long[] _placeHolderLONG = {-1};
+            string[] _placeHolderSTRING = {""};
             // Business Logic from Class Libraries
-            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.InterfaceBusinessLogic();
-            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.InterfaceBusinessLogic();
-            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.InterfaceBusinessLogic();
-            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.InterfaceBusinessLogic();
+            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.InterfaceBusinessLogic(_placeHolderINT, _placeHolderLONG, _placeHolderINT, _placeHolderSTRING, _placeHolderSTRING, _placeHolderSTRING);
+            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.InterfaceBusinessLogic(_placeHolderINT, _placeHolderINT, _placeHolderINT, _placeHolderINT, _placeHolderSTRING, _placeHolderSTRING);
+            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.InterfaceBusinessLogic(_placeHolderINT, _placeHolderLONG, _placeHolderSTRING, _placeHolderSTRING, _placeHolderSTRING);
+            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.InterfaceBusinessLogic(_placeHolderINT, _placeHolderINT, _placeHolderINT, _placeHolderINT, _placeHolderINT, _placeHolderINT);
             // Register to End Program
             bool _complete = false;
             // Title
@@ -78,7 +82,7 @@ namespace Application
                     }else{
                         // Request Data
                         string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
-                        SQLquery("SELECT * FROM Locations", 7, _send, 2);
+                        SQLquery("SELECT * FROM Locations", 7, _send, 3);
                     }
                 }
             }
@@ -105,9 +109,9 @@ namespace Application
                 + "B) DeSerialize Data" + (char)13 + (char)10
                 + new String('=', _data.Length) + (char)13 + (char)10
                 + "U) View Table Customers" + (char)13 + (char)10 // 85, 117
-                + "I) View Table Locations" + (char)13 + (char)10
-                + "O) View Table Products" + (char)13 + (char)10
-                + "P) View Table Orders" + (char)13 + (char)10
+                + "I) View Table Locations" + (char)13 + (char)10 // 73, 105
+                + "O) View Table Products" + (char)13 + (char)10 // 79, 111
+                + "P) View Table Orders" + (char)13 + (char)10 // 80, 112
                 + new String('-', _data.Length) + (char)13 + (char)10 //
                 + "0) Exit" + (char)13 + (char)10 // 48
                 + new String('-', _data.Length) + (char)13 + (char)10 //
@@ -121,7 +125,7 @@ namespace Application
             // Inform
             Console.WriteLine("Processing Query for Customers" + (char)13 + (char)10);
             // Connection Information
-            string _pointer = File.ReadAllText("./MLiMa.Info");
+            string _pointer = File.ReadAllText("./Database.Connection");
 
             //
             // Console.WriteLine(Pointer); // Test

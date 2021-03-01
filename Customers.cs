@@ -4,22 +4,23 @@ namespace CustomerLibrary
 {
     interface IInterface
     {
-        void InterfaceBusinessLogic();
+        void InterfaceBusinessLogic(int[] ID, long[] Phone, int[] HomeStore, string[] Name, string[] Address, string[] eMail);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }         // Primary Key
+        private int[] ID { get; set; }         // Primary Key
 
-        private long Phone { get; set; }     // 12 Digit Internation Code
-        private int HomeStore { get; set; }  // Integer
+        private long[] Phone { get; set; }     // 12 Digit Internation Code
+        private int[] HomeStore { get; set; }  // Integer
 
-        private string Name { get; set; }    // VarChar(100)
-        private string Address { get; set; } // VarChar(300)
-        private string eMail { get; set; }   // VarChar(100)
+        private string[] Name { get; set; }    // VarChar(100)
+        private string[] Address { get; set; } // VarChar(300)
+        private string[] eMail { get; set; }   // VarChar(100)
 
-        public void InterfaceBusinessLogic(){
+        public void InterfaceBusinessLogic(int[] ID, long[] Phone, int[] HomeStore, string[] Name, string[] Address, string[] eMail){
            // Console.WriteLine("Customers."); // SI - TDD
+
         }
     }
 }

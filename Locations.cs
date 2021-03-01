@@ -4,20 +4,20 @@ namespace LocationLibrary
 {
     interface IInterface
     {
-        void InterfaceBusinessLogic();
+        void InterfaceBusinessLogic(int[] ID, long[] Phone, string[] Name, string[] Address, string[] eMail);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }         // Primary Key
+        private int[] ID { get; set; }         // Primary Key
 
-        private long Phone { get; set; }     // 12 Digit Internation Code
+        private long[] Phone { get; set; }     // 12 Digit Internation Code
 
-        private string Name { get; set; }    // VarChar(100)
-        private string Address { get; set; } // VarChar(300)
-        private string eMail { get; set; }   // VarChar(100)
+        private string[] Name { get; set; }    // VarChar(100)
+        private string[] Address { get; set; } // VarChar(300)
+        private string[] eMail { get; set; }   // VarChar(100)
 
-        public void InterfaceBusinessLogic(){
+        public void InterfaceBusinessLogic(int[] ID, long[] Phone, string[] Name, string[] Address, string[] eMail){
             // Console.WriteLine("Locations."); // SI - TDD
         }
     }
