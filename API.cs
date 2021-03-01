@@ -8,10 +8,10 @@ namespace Application
         static void Main()
         {   
             // Business Logic from Class Libraries
-            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.BusinessLogic();
-            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.BusinessLogic();
-            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.BusinessLogic();
-            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.BusinessLogic();
+            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.BusinessLogic(false);
+            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.BusinessLogic(false);
+            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.BusinessLogic(false);
+            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.BusinessLogic(false);
             // Register to End Program
             bool _complete = false;
             // Title

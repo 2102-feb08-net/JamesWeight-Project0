@@ -4,7 +4,7 @@ namespace ProductLibrary
 {
     interface IInterface
     {
-        void BusinessLogic();
+        void BusinessLogic(bool Display);
     }
 
     internal class Routines : IInterface
@@ -18,12 +18,15 @@ namespace ProductLibrary
         private string Name { get; set; }    // VarChar(100)
         private string Description { get; set; } // VarChar(300)
 
-        public void BusinessLogic()
+        public void BusinessLogic(bool Display)
         {
-            // New Line
-            Console.WriteLine(" ");
-            // Message to User
-            Console.WriteLine("Validation on Products."); // SI - TDD
+            if (Display)
+            {
+                // New Line
+                Console.WriteLine(" ");
+                // Message to User
+                Console.WriteLine("Validation on Products."); // SI - TDD
+            }
         }
     }
 }

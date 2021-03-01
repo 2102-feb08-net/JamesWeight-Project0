@@ -43,25 +43,25 @@ namespace DBlayer
                             {
                                 // Instantiation
                                 CustomerLibrary.Routines _instanceLR = new CustomerLibrary.Routines();
-                                _instanceLR.BusinessLogic();
+                                _instanceLR.BusinessLogic(true);
                             }
                             if (_dataSet == 1)
                             {
                                 // Instantiation
                                 LocationLibrary.Routines _instanceLR = new LocationLibrary.Routines();
-                                _instanceLR.BusinessLogic();
+                                _instanceLR.BusinessLogic(true);
                             }
                             if (_dataSet == 2)
                             {
                                 // Instantiation
                                 ProductLibrary.Routines _instanceLR = new ProductLibrary.Routines();
-                                _instanceLR.BusinessLogic();
+                                _instanceLR.BusinessLogic(true);
                             }
                             if (_dataSet == 3)
                             {
                                 // Instantiation
                                 OrderLibrary.Routines _instanceLR = new OrderLibrary.Routines();
-                                _instanceLR.BusinessLogic();
+                                _instanceLR.BusinessLogic(true);
                             }
                             // New Line
                             Console.WriteLine();

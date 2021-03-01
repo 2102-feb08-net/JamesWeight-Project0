@@ -4,7 +4,7 @@ namespace OrderLibrary
 {
     interface IInterface
     {
-        void BusinessLogic();
+        void BusinessLogic(bool Display);
     }
 
     internal class Routines : IInterface
@@ -20,12 +20,15 @@ namespace OrderLibrary
 
         private string Record { get; set; } // Date Time Offset UTC
 
-        public void BusinessLogic()
+        public void BusinessLogic(bool Display)
         {
-            // New Line
-            Console.WriteLine(" ");
-            // Message to User
-            Console.WriteLine("Validation on Orders."); // SI - TDD
+            if (Display)
+            {
+                // New Line
+                Console.WriteLine(" ");
+                // Message to User
+                Console.WriteLine("Validation on Orders."); // SI - TDD
+            }
         }
     }
 }

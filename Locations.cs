@@ -4,7 +4,7 @@ namespace LocationLibrary
 {
     interface IInterface
     {
-        void BusinessLogic();
+        void BusinessLogic(bool Display);
     }
 
     internal class Routines : IInterface
@@ -17,12 +17,15 @@ namespace LocationLibrary
         private string Address { get; set; } // VarChar(300)
         private string eMail { get; set; }   // VarChar(100)
 
-        public void BusinessLogic()
+        public void BusinessLogic(bool Display)
         {
-            // New Line
-            Console.WriteLine(" ");
-            // Message to User
-            Console.WriteLine("Validation on Locations."); // SI - TDD
+            if (Display)
+            {
+                // New Line
+                Console.WriteLine(" ");
+                // Message to User
+                Console.WriteLine("Validation on Locations."); // SI - TDD
+            }
         }
     }
 }
