@@ -38,7 +38,14 @@ namespace OrderLibrary
                 DealsPercentageReduction = Convert.ToInt32(_readData[5]);
                 DealsAmountReduction = Convert.ToInt32(_readData[6]);
                 // Validation with Business Logic
+                if (ID < 0) ID = 0;
+                if (CustomerID < 0) CustomerID = 0;
+                if (LocationID < 0) LocationID = 0;
+                if (ProductID < 0) ProductID = 0;
 
+                if (DealsPercentageReduction < 0 ) DealsPercentageReduction = 0;
+                if (DealsPercentageReduction > 100 ) DealsPercentageReduction = 100;
+                if (DealsAmountReduction < 0 ) DealsAmountReduction = 0;
             }
         }
     }

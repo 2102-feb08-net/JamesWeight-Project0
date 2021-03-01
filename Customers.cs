@@ -36,7 +36,11 @@ namespace CustomerLibrary
                 eMail = _readData[4].ToString();
                 HomeStore = Convert.ToInt32(_readData[5]);
                 // Validation with Business Logic
-
+                if (ID < 0) ID = 0;
+                if (HomeStore < 0) HomeStore = 0;
+                if (Name == String.Empty) Name = "Enter Name";
+                if (Phone < 10000000000 ) Phone = 100000000000;
+                
             }
         }
     }

@@ -33,8 +33,9 @@ namespace LocationLibrary
                 Phone = Convert.ToInt64(_readData[3]);
                 eMail = _readData[4].ToString();
                 // Validation with Business Logic
-
-            }
+                if (ID < 0) ID = 0;
+                if (Name == String.Empty) Name = "Enter Name";
+                if (Phone < 10000000000 ) Phone = 100000000000;            }
         }
     }
 }

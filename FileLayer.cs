@@ -11,7 +11,7 @@ namespace FileIOlayer
         // Serialize into XML
         internal void Serialization(object _readData, int _dataSet)
         {
-            Console.WriteLine(_readData + _dataSet.ToString());
+            Console.WriteLine(_readData + " - " + _dataSet.ToString());
             // Customers
             if (_dataSet == 0)
             {
@@ -23,7 +23,7 @@ namespace FileIOlayer
                 _encrypt.Serialize(_output, _instantiation);
                 _output.Close();     
             }
-            // Customers
+            // Locations
             if (_dataSet == 1)
             {
                 // Setup
@@ -33,7 +33,8 @@ namespace FileIOlayer
                 // Send to File
                 _encrypt.Serialize(_output, _instantiation);
                 _output.Close();     
-            }            // Customers
+            }            
+            // Products
             if (_dataSet == 2)
             {
                 // Setup
@@ -43,7 +44,8 @@ namespace FileIOlayer
                 // Send to File
                 _encrypt.Serialize(_output, _instantiation);
                 _output.Close();     
-            }            // Customers
+            }           
+            // Orders
             if (_dataSet == 3)
             {
                 // Setup
@@ -55,6 +57,79 @@ namespace FileIOlayer
                 _output.Close();     
             }
         }
+
+        // DeSerialize from XML 
+        /*
+        internal void DeSerialization(object _readData, int _dataSet)
+        {
+            Console.WriteLine(_readData + " % " + _dataSet.ToString());
+            // Customers
+            if (_dataSet == 0)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(CustomerLibrary.Routines));
+                CustomerLibrary.Routines_instantiation;
+                // Read File
+                using (Stream _process = new FileStream(@"./EncryptedCustomer.XML", FileMode.Open))
+                {
+                // Process
+                _instantiation = (CustomerLibrary.Routines)serializer.Deserialize(_process);
+                }
+                // Write to object.
+                Console.Write(_instantiation.ID + "\t");
+                // Close Resource
+                _process.Close();     
+            }
+            // Locations
+            if (_dataSet == 1)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(LocationLibrary.Routines));
+                CustomerLibrary.Routines _instantiation;
+                // Read File
+                using (Stream _process = new FileStream(@"./EncryptedLocation.XML", FileMode.Open))
+                {
+                // Process
+                _instantiation = (CustomerLibrary.Routines)serializer.Deserialize(_process);
+                }
+                // Write to object.
+                Console.Write(_instantiation.ID + "\t");
+                // Close Resource
+                _process.Close();             }
+            // Products
+            if (_dataSet == 2)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(ProductLibrary.Routines));
+                CustomerLibrary.Routines _instantiation;
+                // Read File
+                using (Stream _process = new FileStream(@"./EncryptedProduct.XML", FileMode.Open))
+                {
+                // Process
+                _instantiation = (CustomerLibrary.Routines)serializer.Deserialize(_process);
+                }
+                // Write to object.
+                Console.Write(_instantiation.ID + "\t");
+                // Close Resource
+                _process.Close();
+            }
+            // Orders
+            if (_dataSet == 3)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(OrderLibrary.Routines));
+                CustomerLibrary.Routines _instantiation;
+                // Read File
+                using (Stream _process = new FileStream(@"./EncryptedOrder.XML", FileMode.Open))
+                {
+                // Process
+                _instantiation = (CustomerLibrary.Routines)serializer.Deserialize(_process);
+                }
+                // Write to object.
+                Console.Write(_instantiation.ID + "\t");
+                // Close Resource
+                _process.Close();            }
+        } */
     }
 }
 

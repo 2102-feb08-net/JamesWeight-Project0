@@ -35,8 +35,11 @@ namespace ProductLibrary
                 Price = Convert.ToInt32(_readData[4]);
                 Quantity = Convert.ToInt32(_readData[5]);
                 // Validation with Business Logic
-
-            }
+                if (ID < 0) ID = 0;
+                if (LocationID < 0) LocationID = 0;
+                if (Name == String.Empty) Name = "Description";
+                if (Price < 0 ) Price = 0;
+                if (Quantity < 0 ) Quantity = 0;            }
         }
     }
 }
