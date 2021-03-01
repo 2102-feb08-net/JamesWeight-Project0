@@ -4,28 +4,38 @@ namespace ProductLibrary
 {
     interface IInterface
     {
-        void BusinessLogic(bool Display);
+        void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }  // Primary Key
+        internal int ID { get; set; }  // Primary Key
 
-        private int LocationID { get; set; }  // Zipcode of Store
-        private int Price { get; set; }  // In U.S. Dollars
-        private int Quantity { get; set; }  // In Stock at LocationID
+        internal int LocationID { get; set; }  // Zipcode of Store
+        internal int Price { get; set; }  // In U.S. Dollars
+        internal int Quantity { get; set; }  // In Stock at LocationID
 
-        private string Name { get; set; }    // VarChar(100)
-        private string Description { get; set; } // VarChar(300)
+        internal string Name { get; set; }    // VarChar(100)
+        internal string Description { get; set; } // VarChar(300)
 
-        public void BusinessLogic(bool Display)
+        public void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query)
         {
-            if (Display)
+            if (_display)
             {
                 // New Line
                 Console.WriteLine(" ");
                 // Message to User
-                Console.WriteLine("Validation on Products."); // SI - TDD
+                Console.WriteLine("Validation on Customers."); // SI - TDD
+                // for (int _index = 0; _index < _length; _index ++){ Console.WriteLine(_key[_index] + ": " + _readData[_index]); }
+                // set Domain Class Information
+                ID = Convert.ToInt32(_readData[0]);
+                LocationID = Convert.ToInt32(_readData[1]);
+                Name = _readData[2].ToString();
+                Description = _readData[3].ToString();
+                Price = Convert.ToInt32(_readData[4]);
+                Quantity = Convert.ToInt32(_readData[5]);
+                // Validation with Business Logic
+
             }
         }
     }

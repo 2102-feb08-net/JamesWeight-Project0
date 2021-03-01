@@ -4,30 +4,41 @@ namespace OrderLibrary
 {
     interface IInterface
     {
-        void BusinessLogic(bool Display);
+        void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }  // Primary Key
+        internal int ID { get; set; }  // Primary Key
 
-        private int CustomerID { get; set; } // Foreign Key
-        private int StoreID { get; set; } // Foreign Key
-        private int ProductID { get; set; } // Foreign Key
+        internal int CustomerID { get; set; } // Foreign Key
+        internal int LocationID { get; set; } // Foreign Key
+        internal int ProductID { get; set; } // Foreign Key
 
-        private int DealsPercentageReduction { get; set; } // Special Deal
-        private int DealsAmountReduction { get; set; } // Special Deal
+        internal int DealsPercentageReduction { get; set; } // Special Deal
+        internal int DealsAmountReduction { get; set; } // Special Deal
 
-        private string Record { get; set; } // Date Time Offset UTC
+        internal string Record { get; set; } // Date Time Offset UTC
 
-        public void BusinessLogic(bool Display)
+        public void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query)
         {
-            if (Display)
+            if (_display)
             {
                 // New Line
                 Console.WriteLine(" ");
                 // Message to User
-                Console.WriteLine("Validation on Orders."); // SI - TDD
+                Console.WriteLine("Validation on Customers."); // SI - TDD
+                // for (int _index = 0; _index < _length; _index ++){ Console.WriteLine(_key[_index] + ": " + _readData[_index]); }
+                // set Domain Class Information
+                ID = Convert.ToInt32(_readData[0]);
+                CustomerID = Convert.ToInt32(_readData[1]);
+                LocationID = Convert.ToInt32(_readData[2]);
+                ProductID = Convert.ToInt32(_readData[3]);
+                Record = _readData[4].ToString();
+                DealsPercentageReduction = Convert.ToInt32(_readData[5]);
+                DealsAmountReduction = Convert.ToInt32(_readData[6]);
+                // Validation with Business Logic
+
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace Application
 {
@@ -6,11 +7,15 @@ namespace Application
     {
         static void Main()
         {   
-            // SI - TDD
-            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.BusinessLogic(false);
-            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.BusinessLogic(false);
-            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.BusinessLogic(false);
-            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.BusinessLogic(false);
+            // Temporary Set for Initial Process of Business Logic as Disabled or NULL in Functioning
+            // SqlDataReader _classTemporary = new SqlDataReader();
+            string[] _temporaryArray = {"1", "2", "3"};
+            // SI - TDD : BusinessLogic(false, String.Empty, -1, [1,2,3], -1, "") => Prevent From Command Execution at Start of Run-Time
+            //                                                                       ^- for Structural Integrity Test
+            CustomerLibrary.Routines _logicCL = new CustomerLibrary.Routines(); _logicCL.BusinessLogic(false, "", -1, _temporaryArray, -1, "");
+            ProductLibrary.Routines _logicPL = new ProductLibrary.Routines(); _logicPL.BusinessLogic(false, "", -1, _temporaryArray, -1, "");
+            LocationLibrary.Routines _logicLL = new LocationLibrary.Routines(); _logicLL.BusinessLogic(false, "", -1, _temporaryArray, -1, "");
+            OrderLibrary.Routines _logicOL = new OrderLibrary.Routines(); _logicOL.BusinessLogic(false, "", -1, _temporaryArray, -1, "");
             // Register to End Program
             bool _complete = false;
             // Title
@@ -51,7 +56,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "Name", "Address", "Phone Number", "eMail Address"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 0);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 5, _send, 1);
                     }
                 }
                 // ----- I / i ----- Product Functions
@@ -62,7 +67,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "At Location Identifier", "Name", "Description", "Price", "Quantity In Location"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 0);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 2);
                     }
                 }
                 // ----- I / i ----- Order Functions
@@ -73,7 +78,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 0);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 3);
                     }
                 }
             }

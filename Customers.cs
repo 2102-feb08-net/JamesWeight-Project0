@@ -1,31 +1,42 @@
 using System;
+using System.Data.SqlClient;
 
 namespace CustomerLibrary
 {
     interface IInterface
     {
-        void BusinessLogic(bool Display);
+        void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query);
     }
 
     internal class Routines : IInterface
     {
-        private int ID { get; set; }         // Primary Key
+        internal int ID { get; set; }         // Primary Key
 
-        private long Phone { get; set; }     // 12 Digit Internation Code
-        private int HomeStore { get; set; }  // Integer
+        internal long Phone { get; set; }     // 12 Digit Internation Code
+        internal int HomeStore { get; set; }  // Integer
 
-        private string Name { get; set; }    // VarChar(100)
-        private string Address { get; set; } // VarChar(300)
-        private string eMail { get; set; }   // VarChar(100)
+        internal string Name { get; set; }    // VarChar(100)
+        internal string Address { get; set; } // VarChar(300)
+        internal string eMail { get; set; }   // VarChar(100)
 
-        public void BusinessLogic(bool Display)
+        public void BusinessLogic(bool _display, string _readData, int _length, string[] _key, int _dataSet, string _query)
         {
-            if (Display)
+            if (_display)
             {
                 // New Line
                 Console.WriteLine(" ");
                 // Message to User
                 Console.WriteLine("Validation on Customers."); // SI - TDD
+                // for (int _index = 0; _index < _length; _index ++){ Console.WriteLine(_key[_index] + ": " + _readData[_index]); }
+                // set Domain Class Information
+                ID = Convert.ToInt32(_readData[0]);
+                Name = _readData[1].ToString();
+                Address = _readData[2].ToString();
+                Phone = Convert.ToInt64(_readData[3]);
+                eMail = _readData[4].ToString();
+                HomeStore = Convert.ToInt32(_readData[5]);
+                // Validation with Business Logic
+
             }
         }
     }

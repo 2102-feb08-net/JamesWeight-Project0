@@ -7,10 +7,14 @@ namespace DBlayer
     internal class Start
     {
         // System.Data.SQLclient
-        internal void DBprocess(string _query, int _length, string[] _key, int _dataSet)
+        internal async void DBprocess(string _query, int _length, string[] _key, int _dataSet)
         {
-            // Inform
-            Console.WriteLine("Processing Query for Customers" + (char)13 + (char)10);
+            // _dataSet Selection to Inform
+            if (_dataSet == 0){ Console.WriteLine("Processing Query for Customers" + (char)13 + (char)10); }
+            if (_dataSet == 1){ Console.WriteLine("Processing Query for Locations" + (char)13 + (char)10); }
+            if (_dataSet == 3){ Console.WriteLine("Processing Query for Products" + (char)13 + (char)10); }
+            if (_dataSet == 4){ Console.WriteLine("Processing Query for Orders" + (char)13 + (char)10); }
+            
             // Connection Information
             string _pointer = File.ReadAllText("./Database.Connection");
 
@@ -31,40 +35,42 @@ namespace DBlayer
                         // Read Instruction
                         SqlDataReader _readData = _instructionDB.ExecuteReader();
                         // Display Data while TRUE
+                        // await attempt
                         while (_readData.Read())
                         {
-                            for (int _index = 0; _index < _length; _index ++)
-                            {
-                                Console.WriteLine(_key[_index] + ": " + _readData[_index]);
-                            }
+                            // Await Activity
+                            //await Task.Run(
+                            for (int _index = 0; _index < _length; _index ++){ Console.WriteLine(_key[_index] + ": " + _readData[_index]); }
+                            //);
                             // Store SQLdata
                              FileIOlayer.Routines _logicIO = new FileIOlayer.Routines();
                              // Serialize Data for Transport
-                             bool _choice = _logicIO.Serialization(_readData);
+                             // await 
+                             _logicIO.Serialization(_readData, _dataSet);
                             // Business Logic
                             if (_dataSet == 0)
                             {
                                 // Instantiation
-                                CustomerLibrary.Routines _instanceLR = new CustomerLibrary.Routines();
-                                _instanceLR.BusinessLogic(_choice);
+                                CustomerLibrary.Routines _instanceCL = new CustomerLibrary.Routines();
+                                _instanceCL.BusinessLogic(true, "", _length, _key, _dataSet, _query);
                             }
                             if (_dataSet == 1)
                             {
                                 // Instantiation
-                                LocationLibrary.Routines _instanceLR = new LocationLibrary.Routines();
-                                _instanceLR.BusinessLogic(_choice);
+                                LocationLibrary.Routines _instanceLL = new LocationLibrary.Routines();
+                                _instanceLL.BusinessLogic(true, "", _length, _key, _dataSet, _query);
                             }
                             if (_dataSet == 2)
                             {
                                 // Instantiation
-                                ProductLibrary.Routines _instanceLR = new ProductLibrary.Routines();
-                                _instanceLR.BusinessLogic(_choice);
+                                ProductLibrary.Routines _instancePL = new ProductLibrary.Routines();
+                                _instancePL.BusinessLogic(true, "", _length, _key, _dataSet, _query);
                             }
                             if (_dataSet == 3)
                             {
                                 // Instantiation
-                                OrderLibrary.Routines _instanceLR = new OrderLibrary.Routines();
-                                _instanceLR.BusinessLogic(_choice);
+                                OrderLibrary.Routines _instanceOL = new OrderLibrary.Routines();
+                                _instanceOL.BusinessLogic(true, "", _length, _key, _dataSet, _query);
                             }
                             // New Line
                             Console.WriteLine();

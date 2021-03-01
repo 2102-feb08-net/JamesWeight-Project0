@@ -5,13 +5,55 @@ using System.Xml.Serialization;
 
 namespace FileIOlayer
 {
+    [XmlRootAttribute(IsNullable = false)]
     internal class Routines
     {
         // Serialize into XML
-        internal bool Serialization(object _readData){
-            Console.WriteLine(_readData);
-
-            return true;
+        internal void Serialization(object _readData, int _dataSet)
+        {
+            Console.WriteLine(_readData + _dataSet.ToString());
+            // Customers
+            if (_dataSet == 0)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(CustomerLibrary.Routines));
+                TextWriter _output = new StreamWriter(@"./EncryptedCustomer.XML");
+                CustomerLibrary.Routines _instantiation = new CustomerLibrary.Routines();
+                // Send to File
+                _encrypt.Serialize(_output, _instantiation);
+                _output.Close();     
+            }
+            // Customers
+            if (_dataSet == 1)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(LocationLibrary.Routines));
+                TextWriter _output = new StreamWriter(@"./EncryptedLocation.XML");
+                LocationLibrary.Routines _instantiation = new LocationLibrary.Routines();
+                // Send to File
+                _encrypt.Serialize(_output, _instantiation);
+                _output.Close();     
+            }            // Customers
+            if (_dataSet == 2)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(ProductLibrary.Routines));
+                TextWriter _output = new StreamWriter(@"./EncryptedProduct.XML");
+                ProductLibrary.Routines _instantiation = new ProductLibrary.Routines();
+                // Send to File
+                _encrypt.Serialize(_output, _instantiation);
+                _output.Close();     
+            }            // Customers
+            if (_dataSet == 3)
+            {
+                // Setup
+                XmlSerializer _encrypt = new XmlSerializer(typeof(OrderLibrary.Routines));
+                TextWriter _output = new StreamWriter(@"./EncryptedOrder.XML");
+                OrderLibrary.Routines _instantiation = new OrderLibrary.Routines();
+                // Send to File
+                _encrypt.Serialize(_output, _instantiation);
+                _output.Close();     
+            }
         }
     }
 }
