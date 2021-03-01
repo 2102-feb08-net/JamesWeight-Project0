@@ -34,9 +34,70 @@ namespace Application
                 // Flow-Chart Pointers
                 if (_key == 48) _complete = true;
                 // ----------
+                if (_key == 49)
+                {
+                        // Find Items
+                        string[] _send = {"Reference #", "At Location Identifier", "Name", "Description", "Price", "Quantity In Location"}; 
+                        // DataBase Routines
+                        //DBlayer.Start _logicDB = new DBlayer.Start(); string _result = _logicDB.DBprocess("SELECT (ProductID, LocationID, Description, Price, Quantity) WHERE ProductID=20 AND QUANTITY=10", 6, _send, 2);
+                        // Place Order -> Taking note of Product ID and Quantity with Location ID to make an order transaction for Customer ID
+                        //string[] _send = {"Reference #", "At Location Identifier", "Name", "Description", "Price", "Quantity In Location"}; 
+                        // DataBase Routines
+                        //DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("INSERT INTO Products () WHERE ProductID=20 AND QUANTITY=10", 6, _send, 2);
+                        // Map Order in System
+                        //string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
+                        // DataBase Routines
+                        //DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders", 6, _send, 3);
+                }
+                // ----------
+                if (_key == 50)
+                {
+                        // Request Data
+                        string[] _send = {"Reference #", "Name", "Address", "Phone Number", "eMail Address", "Home Store Preference"}; 
+                        // DataBase Routines
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers WHERE LastName='" + Console.ReadLine() + "'", 6, _send, 0);
+                }
+                // ----------
+                if (_key == 52)
+                {
+                        // Request Data
+                        string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
+                        // DataBase Routines
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders Where LocationID='" + Console.ReadLine() + "' JOIN LocationID IS NOT NULL", 6, _send, 3);
+                        // Request Data
+                        //string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
+                        // DataBase Routines
+                        //DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders Where ProductID='" + Console.ReadLine() + "' JOIN ProductID IS NOT NULL", 6, _send, 3);
+                }
+                // ----------
+                if (_key == 52)
+                {
+                        // Request Data
+                        string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
+                        // DataBase Routines
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders Where OrderID='" + Console.ReadLine() + "' JOIN CustomerID IS NOT NULL", 6, _send, 3);
+                }
+                if (_key == 53)
+                {
+                        // Request Data
+                        string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
+                        // DataBase Routines
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders Where CustomerID='" + Console.ReadLine() + "' JOIN ProductID IS NOT NULL", 6, _send, 3);
+                }
+                // ----------
                 if (_key == 55){ _entityMode = true; Console.WriteLine("Linq - Entity Frame-work Core Mode"); }
                 if (_key == 56){ _entityMode = false; Console.WriteLine("System.Data.SQLclient Mode"); }
                 if (_key == 57) DisplayMenu(_data);
+                // ----- A /a ------ Encrypt : Serialization -> Binary
+                if (_key == 65 || _key == 97)
+                {
+                        // Request Data
+                        string[] _send = {"Reference #", "Name", "Address", "Phone Number", "eMail Address", "Home Store Preference"}; 
+                        // DataBase Routines
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 0);
+                }
+                // ----- B / b ----- Decypher : Deserialization <- From Binary
+                //if (_key == 66 || _key == 98){ DeSerialization(object _readData, int _dataSet) }
                 // ----- U / u ----- Customer Functions
                 if (_key == 85 || _key == 117){
                     if (_entityMode){
@@ -56,7 +117,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "Name", "Address", "Phone Number", "eMail Address"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 5, _send, 1);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Locations", 5, _send, 1);
                     }
                 }
                 // ----- I / i ----- Product Functions
@@ -67,7 +128,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "At Location Identifier", "Name", "Description", "Price", "Quantity In Location"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 2);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Products", 6, _send, 2);
                     }
                 }
                 // ----- I / i ----- Order Functions
@@ -78,7 +139,7 @@ namespace Application
                         // Request Data
                         string[] _send = {"Reference #", "Customer Reference #", "Location Reference #", "Product Reference #", "Record Date", "Percentage Off", "Reduced Amount"}; 
                         // DataBase Routines
-                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Customers", 6, _send, 3);
+                        DBlayer.Start _logicDB = new DBlayer.Start(); _logicDB.DBprocess("SELECT * FROM Orders", 6, _send, 3);
                     }
                 }
             }
